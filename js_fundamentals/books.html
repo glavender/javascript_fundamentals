@@ -1,0 +1,33 @@
+<html>
+<body>
+<h1>My Book List</h1>
+<script>
+var pageNode = document.getElementsByTagName('body')[0];
+var books = [
+{title: "The Death and Life of Great American Cities",
+author: "Jane Jacobs",
+url: "https://upload.wikimedia.org/wikipedia/en/2/21/DeathAndLife.JPG",
+alreadyRead: true},
+{title: "A Game of Thrones",
+author: "George R. R. Martin",
+url: "https://upload.wikimedia.org/wikipedia/en/thumb/9/93/AGameOfThrones.jpg/200px-AGameOfThrones.jpg",
+alreadyRead: true},
+{title: "A Storm of Swords",
+author: "George R. R. Martin",
+url: "https://upload.wikimedia.org/wikipedia/en/thumb/2/24/AStormOfSwords.jpg/200px-AStormOfSwords.jpg",
+alreadyRead: false}
+];
+var list1 = document.createElement("ul");
+pageNode.appendChild(list1);
+for(i=0; i < books.length; i++){
+  var newParagraph = document.createElement("li");
+  var imageElement = document.createElement("img");
+  imageElement.setAttribute("src", books[i].url);
+  var titleAndAuthor = document.createTextNode(books[i].title + " by " + books[i].author);
+  newParagraph.appendChild(imageElement);
+  newParagraph.appendChild(titleAndAuthor);
+  pageNode.appendChild(newParagraph);
+}
+</script>
+</body>
+</html>
